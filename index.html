@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personalized book recommendation tool">
+    <title>Book Recommendation App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Find Your Next Book</h1>
+    </header>
+    <main role="main">
+        <section id="preference-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">Your Preferences</h2>
+            <form id="book-form" aria-label="Book preference selection form">
+                <div class="form-group">
+                    <label for="genre">Genre:</label>
+                    <select id="genre" name="genre" aria-describedby="genre-desc">
+                        <option value="">Any</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="mystery">Mystery</option>
+                    </select>
+                    <small id="genre-desc">Select your preferred genre</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" placeholder="e.g., J.K. Rowling" aria-describedby="author-desc">
+                    <small id="author-desc">Enter an author name (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Max Price (£):</label>
+                    <input type="number" id="price" name="price" min="0" step="0.01" placeholder="e.g., 20" aria-describedby="price-desc">
+                    <small id="price-desc">Set a maximum price (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <select id="language" name="language" aria-describedby="lang-desc">
+                        <option value="">Any</option>
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                    </select>
+                    <small id="lang-desc">Choose a language</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="format">Format:</label>
+                    <select id="format" name="format" aria-describedby="format-desc">
+                        <option value="">Any</option>
+                        <option value="hardcover">Hardcover</option>
+                        <option value="paperback">Paperback</option>
+                    </select>
+                    <small id="format-desc">Select book format</small>
+                </div>
+
+                <button type="submit">Find Books</button>
+            </form>
+        </section>
+
+        <section id="results" aria-labelledby="results-heading" aria-live="polite">
+            <h2 id="results-heading">Recommendations</h2>
+            <div id="book-list"></div>
+        </section>
+
+        <section id="wishlist" aria-labelledby="wishlist-heading">
+            <h2 id="wishlist-heading">Your Wishlist</h2>
+            <div id="wishlist-list"></div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Book Recommendation App</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
